@@ -8,7 +8,9 @@ use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function(){ return 'index'; });
+Route::get('/', [HomeController::class, 'index'])->name('site.index');
+Route::get('/sobre', [HomeController::class, 'sobre'])->name('site.sobre');
+Route::get('/contato', [HomeController::class, 'contato'])->name('site.contato');
 
 Route::prefix('/app')->group(function(){
     Route::get('/clientes', action: function(){ return 'clientes'; })->name('app.clientes');
@@ -18,6 +20,3 @@ Route::prefix('/app')->group(function(){
 
 Route::get('/teste/{p1}/{p2}', [TestController::class, 'index'])->name('teste.index');
 
-Route::fallback(function(){
-    echo 'rota acessada não existe <a href="'.route('site.index').'">VOLTAR</a>';
-});
