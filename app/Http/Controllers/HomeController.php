@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        return view('site.index');
+        return view('site.index', ['title' => 'Home Page']);
     }
 
     public function sobre(){
@@ -16,5 +16,10 @@ class HomeController extends Controller
 
     public function contato(){
         return view('site.contato');
+    }
+
+    public function store_contato()
+    {
+        dd($_POST);
     }
 }
