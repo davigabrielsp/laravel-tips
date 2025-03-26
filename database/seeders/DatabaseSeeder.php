@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\MotivoContato;
 use App\Models\SiteContato;
 use Database\Factories\SiteContatoFactory;
 use Faker\Factory;
@@ -18,9 +19,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-    //    $this->call(FornecedorSeeder::class);
-    //    $this->call(SiteContatoSeeder::class);
-
-        SiteContato::factory()->count(100)->create();
+        //SiteContato::factory()->count(100)->create();
+        //MotivoContatoSeeder::factory()->count()->create();
+        $this->call(MotivoContatoSeeder::class);
     }
 }

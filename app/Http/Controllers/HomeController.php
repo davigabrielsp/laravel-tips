@@ -14,9 +14,7 @@ class HomeController extends Controller
         return view('site.sobre');
     }
 
-    public function contato(){
-        return view('site.contato');
-    }
+
 
     public function store_contato()
     {
